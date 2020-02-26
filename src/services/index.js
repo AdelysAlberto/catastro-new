@@ -1,5 +1,7 @@
 import UserService from './user.service';
+import PersonService from './person.service';
 
 module.exports = {
-    userService: new UserService(),
+    UserService: new UserService(),
+    PersonService: new PersonService(),
 };

@@ -235,14 +235,27 @@ CREATE TABLE IF NOT EXISTS `concepto` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 CREATE TABLE IF NOT EXISTS `pagos` (
-  `idPago` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `idDocumento` int(11) NOT NULL,
   `idUt` int(11) NOT NULL,
   `fecha` date NOT NULL,
   `idConcepto` int(11) NOT NULL,
   `idUsuario` int(11) NOT NULL,
-  PRIMARY KEY (`idPago`),
+  PRIMARY KEY (`id`),
   KEY `idDocumento` (`idDocumento`,`idUt`,`idUsuario`),
   KEY `idConcepto` (`idConcepto`),
   KEY `idUt` (`idUt`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+CREATE TABLE IF NOT EXISTS `arquitectos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `isPrincipal` boolean not null,
+  `name` varchar(60) NOT NULL,
+  `lastname` int(11) NOT NULL,
+  `phone` date NOT NULL,
+  `address` int(11) NOT NULL,
+  `fkStatus` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+    FOREIGN KEY ('fkStatus') REFERENCES status(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;

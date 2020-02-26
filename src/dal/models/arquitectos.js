@@ -1,33 +1,41 @@
 
 module.exports = (sequelize, DataTypes) => {
-    const Persona = sequelize.define('Persona', {
-        cedula: {
-            type: DataTypes.STRING(16),
-            allowNull: false,
-            primaryKey: true,
-        },
-        nombre: {
-            type: DataTypes.STRING(80),
-            allowNull: false,
-        },
-        telefono: {
-            type: DataTypes.STRING(20),
-            allowNull: false,
-        },
-        direccion: {
+    const Arquitectos = sequelize.define('Arquitectos', {
+        sub: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        claveCatastral: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        fkUser: {
-            type: DataTypes.INTEGER,
+        lastname: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        role: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        resolution: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        isPrincipal: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+        },
+        phone: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        address: {
+            type: DataTypes.STRING,
             allowNull: false,
         },
         fkStatus: {
             type: DataTypes.INTEGER,
+            allowNull: false,
         },
         createdAt: {
             type: 'TIMESTAMP',
@@ -40,24 +48,14 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
         },
     }, {
-        tableName: 'personas',
-        indexes: [
-            {
-                unique: true,
-                fields: [ 'cedula' ],
-            },
-        ],
+        tableName: 'arquitectos',
     });
-    Persona.associate = function (models) {
+    Arquitectos.associate = function (models) {
     // associations can be defined here
-        Persona.belongsTo(models.User, {
-            foreignKey: 'fkUser',
-            sourceKey: 'id',
-        });
-        Persona.belongsTo(models.Status, {
+        Arquitectos.belongsTo(models.Status, {
             foreignKey: 'fkStatus',
             sourceKey: 'id',
         });
     };
-    return Persona;
+    return Arquitectos;
 };
