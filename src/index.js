@@ -1,6 +1,7 @@
 import dotenv from 'dotenv';
 import express from 'express';
 import bodyParser from 'body-parser';
+
 import morgan from 'morgan';
 
 dotenv.config();
@@ -21,7 +22,9 @@ app.get('/', (req, res) => {
 app.use('/', routes);
 
 app.listen(process.env.PORT, () => {
-    db.sequelize.sync()
+    db.sequelize.sync({
+        logging: false,
+    })
         .then(() => {
             console.log('Connected BD');
             console.log('Starting in Port', process.env.PORT);

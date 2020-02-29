@@ -1,6 +1,5 @@
 import { PersonService } from '../services';
 
-
 class PersonController {
     async getPerson(req, res) {
         const { id } = req.params;
@@ -8,7 +7,7 @@ class PersonController {
         if (!id) {
             user = await PersonService.getPerson();
         } else {
-            user = await PersonService.getPersonBy(id);
+            user = await PersonService.getPersonBy('cedula', id);
         }
         if (user) {
             res.send(user);

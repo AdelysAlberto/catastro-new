@@ -1,6 +1,5 @@
 import { UserService } from '../services';
 
-
 class UserController {
     async getUser(req, res) {
         const { id } = req.params;

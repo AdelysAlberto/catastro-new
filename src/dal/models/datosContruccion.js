@@ -68,7 +68,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
         },
     }, {
-        tableName: 'servicios',
+        tableName: 'datosConstruccion',
     });
     DatosContruccion.associate = function (models) {
     // associations can be defined here

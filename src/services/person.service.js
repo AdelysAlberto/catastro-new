@@ -13,15 +13,16 @@ class PersonService {
         return ({
             status: 200,
             payload: persona,
+
         });
     }
 
-    async getPersonBy(id) {
+    async getPersonBy(field, id) {
         const getPersona = await Persona.findOne({
-            where: { id },
+            where: { [field]: id },
         });
-        if (getUser) {
-            const user = personMapper.userDomainMapper(getPersona);
+        if (getPersona) {
+            const user = personMapper.personDomainMapper(getPersona);
             return ({
                 status: 200,
                 message: 'success',
@@ -50,4 +51,4 @@ class PersonService {
     }
 }
 
-module.exports = PersonService;
+module.exports = new PersonService();

@@ -17,6 +17,7 @@ module.exports = {
   },
   rules: {
     'no-irregular-whitespace': 2,
+    'no-param-reassign': ["error", { "props": false }],
     'no-multi-spaces': 2,
     'no-lonely-if': 0,
     'no-plusplus': 0,
