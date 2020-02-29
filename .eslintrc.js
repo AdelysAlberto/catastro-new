@@ -16,6 +16,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    'func-names': 0,
     'no-irregular-whitespace': 2,
     'no-param-reassign': ["error", { "props": false }],
     'no-multi-spaces': 2,

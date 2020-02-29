@@ -5,6 +5,10 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             allowNull: false,
         },
+        destino: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         tipoPared: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -22,6 +26,14 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
         },
         techoCubierta: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        pisos: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        ventanas: {
             type: DataTypes.STRING,
             allowNull: false,
         },

@@ -16,10 +16,13 @@ app.use(bodyParser.json())
 
 
 app.get('/', (req, res) => {
-    res.send('Hi');
+    res.send('Hi People!');
 });
 
 app.use('/', routes);
+app.get('*', (req, res) => {
+    res.send('Wops! Not Found', 404);
+});
 
 app.listen(process.env.PORT, () => {
     db.sequelize.sync({
