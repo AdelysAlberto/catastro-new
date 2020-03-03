@@ -1,8 +1,8 @@
 # catastro-new
 Api in development, to manage the new cadastre system
 
-##Backend
+## Backend
 Node / Express / Sequelize 
 
-##BD
+## BD
 Mysql
